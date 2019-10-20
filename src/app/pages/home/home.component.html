@@ -1,0 +1,46 @@
+
+<div class="wrapper">
+  <div class="page-header header-filter">
+    <div class="squares square1"></div>
+    <div class="squares square2"></div>
+    <div class="squares square3"></div>
+    <div class="squares square4"></div>
+    <div class="squares square5"></div>
+    <div class="squares square6"></div>
+    <div class="squares square7"></div>
+    <div class="container">
+      <div class="content-center brand">
+        <h1 class="h1-seo">News•</h1>
+        <h3>
+          All News, All Languages
+        </h3>
+
+        <div class="form-group">
+          <input [(ngModel)]="newsHeaderName" type="text" placeholder="Search News" class="form-control">
+        </div>
+        <button (click)="getNews()" class="btn btn-info">Search</button>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="section section-basic" id="basic-elements">
+      <img class="path" src="assets/img/path1.png" />
+
+
+    </div>
+
+
+  </div>
+
+  <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  bdOpacity = "0.9"
+  type="ball-scale-multiple"
+  [fullScreen] = "true"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+</div>
+
