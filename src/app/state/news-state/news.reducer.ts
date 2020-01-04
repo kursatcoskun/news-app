@@ -5,7 +5,6 @@ import * as fromRoot from '../../state/app-state';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface NewsState extends EntityState<News> {
-    selectedNewID : number | null;
     loading: boolean;
     loaded: boolean;
     error: string;
@@ -20,7 +19,6 @@ export const newsAdapter: EntityAdapter<News> = createEntityAdapter<News>();
 export const defaultNews: NewsState = {
     ids: [],
     entities: {},
-    selectedNewID: 0,
     loading: false,
     loaded: false,
     error: ''

@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
   pagination = 3;
   pagination1 = 1;
   newsHeaderName : string = null;
-  newsInput: NewsInput = {name: null, date: null};
-
+  newsInput: NewsInput = {name: null, date: null,id:null};
+  error$: Observable<String>;
   constructor(private dataService: DataService,
     private router: Router, private spinner: NgxSpinnerService, private store: Store<fromNews.AppState>) {}
   scrollToDownload(element: any) {
@@ -68,6 +68,8 @@ export class HomeComponent implements OnInit {
     this.newsInput.name = this.newsHeaderName;
     this.newsInput.date = this.date;
     this.store.dispatch(new newsActions.LoadNews(this.newsInput));
+    this.error$ = this.store.pipe(select(fromNews.getNewError));
+    console.log(this.error$);
     setTimeout(() => {
       this.router.navigateByUrl('/news-list');
     },2000);
