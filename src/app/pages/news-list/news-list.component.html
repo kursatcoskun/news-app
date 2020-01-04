@@ -1,23 +1,23 @@
 <div style="margin-top: 5% !important;" class="container">
     <div class="row">
-        <div class="col-lg-3">
+         <div class="col-lg-3">
             <ul class="list-group">
-                <li style="color: black !important;" class="list-group-item d-flex justify-content-between align-items-center">
+                <!-- <li style="color: black !important;" class="list-group-item d-flex justify-content-between align-items-center">
                   Search Keyword
                   <span class="badge badge-primary badge-pill">{{extData.keyword}}</span>
                 </li>
                 <li style="color: black !important;"  class="list-group-item d-flex justify-content-between align-items-center">
                     Search Time
                     <span class="badge badge-primary badge-pill">{{extData.date | date: 'dd/MM/yyyy'}}</span>
-                  </li>
+                  </li> -->
                 <li style="color: black !important;"  class="list-group-item d-flex justify-content-between align-items-center">
                   Search Count
-                  <span class="badge badge-primary badge-pill">{{news.totalResults}}</span>
+                  <span class="badge badge-primary badge-pill">{{newsUpdated.totalResults}}</span>
                 </li>
               </ul>
-        </div>
+        </div> 
         <div class="col-lg-9">
-            <div *ngFor="let item of news.articles" class="card text-left">
+            <div *ngFor="let item of newsUpdated.articles" class="card text-left">
               <img class="card-img-top" src="{{item.urlToImage}}" alt="">
               <div class="card-body">
                 <h4 class="card-title">{{item.title}}</h4>

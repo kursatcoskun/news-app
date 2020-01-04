@@ -19,6 +19,10 @@ import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { NewsService } from 'src/services/news.service';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { newsReducer } from '../state/news-state/news.reducer';
+import { NewsEffects } from '../state/news-state/news.effects';
 
 @NgModule({
   declarations: [HomeComponent, NewsListComponent],
@@ -39,7 +43,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     BsDatepickerModule.forRoot(),
     CarouselModule.forRoot(),
     ModalModule.forRoot(),
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    StoreModule.forFeature('news', newsReducer),
+    EffectsModule.forFeature([NewsEffects]),
   ],
   exports: [
     HomeComponent,
